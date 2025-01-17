@@ -48,28 +48,41 @@ items = "";
 for (i = 0; i < teamMembers.length; i++) {
 
   // salvo il valore corrente
-  const membroIesimo = teamMembers[i];
+  const membroIesimo = teamMembers[i];  
 
-  // prendo i valori delle proprietà per il valore corrente
-  const { name, role, email, img } = membroIesimo;
+  // invoco la funzione e l'aggiungo alla stringa contenuta in items
+  items += creaCardMembro(membroIesimo)
 
-  // creo l'html da inserire in pagina
-  items += `
-        <div class="card">
-           <div class="cardImage">
-               <img src="./${img}" alt="${name}">
-           </div>
-           <div class="cardText">
-               <h3>${name}</h3>
-               <div id="roleText">${role}</div>
-               <div id="emailText">${email}</div>
-            </div>
-        </div>
-        `
-
-        console.log(items);
-        
 }
 
 // inserisco output della card in pagina
 outputCard.innerHTML = items;
+
+
+// FUNZIONI
+
+//  funzione che crea la card di un membro
+function creaCardMembro(oggetto) {
+
+  // prendo i valori delle proprietà l'oggetto dato
+  const { name, role, email, img } = oggetto;
+
+  // inizializzo la variabile 
+  let item = "";
+
+  // creo l'html da inserire in pagina
+  item += `
+  <div class="card">
+    <div class="cardImage">
+       <img src="./${img}" alt="${name}">
+    </div>
+    <div class="cardText">
+       <h3>${name}</h3>
+       <div id="roleText">${role}</div>
+       <div id="emailText">${email}</div>
+    </div>
+  </div>
+`
+  return item;
+
+}
