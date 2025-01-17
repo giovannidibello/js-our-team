@@ -3,3 +3,42 @@
     border: 0;
     box-sizing: border-box;
 }
+
+/* general */
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 85%;
+}
+
+/* card */
+
+img {
+    height: 100px;
+}
+
+.card {
+    display: flex;
+    background-color: black;
+    width: 30%;
+}
+
+.cardImage {
+    width: 35%;
+}
+
+.cardText {
+    width: 65%;
+}
+
+.card h3, #roleText {
+    color: white;
+}
+
+#emailText {
+    color: blue;
+}
